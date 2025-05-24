@@ -1,8 +1,8 @@
 services:
   app:
     build:
-      context: ..
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: .devcontainer/Dockerfile
     ports:
       - "8888:8888"
     volumes:
