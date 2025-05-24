@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: ..
-      dockerfile: scripts/Dockerfile
+      dockerfile: Dockerfile
     ports:
       - "8888:8888"
     volumes:
