@@ -3,6 +3,8 @@ services:
     build:
       context: ..
       dockerfile: scripts/Dockerfile
+    ports:
+      - "8888:8888"
     volumes:
       - ..:/workspace:cached
     command: sleep infinity            # Codespace arranca y queda esperando
