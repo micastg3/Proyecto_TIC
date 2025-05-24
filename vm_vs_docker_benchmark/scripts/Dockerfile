@@ -1,8 +1,17 @@
+# scripts/Dockerfile
 FROM python:3.10-slim
-RUN apt update && apt install -y sysbench git curl procps \
-    && pip install --upgrade pip \
-    && pip install jupyter matplotlib psutil
-WORKDIR /app
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        sysbench \
+        mysql-client \
+        git curl procps && \
+    pip install --upgrade pip && \
+    pip install jupyter matplotlib psutil && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
 COPY . .
+
 EXPOSE 8888
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=''"]
