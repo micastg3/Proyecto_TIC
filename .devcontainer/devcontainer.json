@@ -2,7 +2,7 @@
   "name": "VM vs Docker Benchmark",
   "dockerComposeFile": "docker-compose.yml",
   "service": "app",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces/Proyecto_TIC",
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:1": {}
   },
